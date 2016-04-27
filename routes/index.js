@@ -13,6 +13,11 @@ router.get('/signup', function(req, res) {
 	res.render('sign_up', { title: 'SIGN UP' });
 });
 
+router.get('/messages', function(req, res) {
+	res.render('messages', { title: 'MY MESSAGES' });
+});
+
+
 
 router.post('/', function(req, res) {
 	var email = req.body.email;

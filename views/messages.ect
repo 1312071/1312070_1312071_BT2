@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title><%- @title %></title>
+   <% include 'layouts/layout_messages' %>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+  <body>
+  	<div class="container">
+      <form name = "newmess" action="newmess" method="get" accept-charset="utf-8">
+        <input type="submit" class="btn btn-primary" value = "New Message"/>
+      </form>
+      <form class="form-inline" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
+  		  <input type="submit" class="btn btn-success" value= "My Friends"/>
+      
+  		<button type="button" class="btn btn-info">Old Messages</button>
+  		<br><br><br>
+      </form>
+   
+		<div class="list-group">
+		  <a href="#" class="list-group-item list-group-item-success">Message 1</a>
+		  <a href="#" class="list-group-item list-group-item-info">Message 2</a>
+		  <a href="#" class="list-group-item list-group-item-warning">Message 3</a>
+		  <a href="#" class="list-group-item list-group-item-danger">Message 4</a>
+		</div>
+	</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -9,6 +9,10 @@ router.get('/', function(req, res) {
 	res.render('index', { title: 'HOME' });
 });
 
+router.get('/signup', function(req, res) {
+	res.render('sign_up', { title: 'SIGN UP' });
+});
+
 
 router.post('/', function(req, res) {
 	var email = req.body.email;
@@ -33,6 +37,25 @@ router.post('/', function(req, res) {
 		dangnhap = email;
 		console.log('created user: %s', email);
 		return res.send(user);
+	});
+});
+
+router.post('/signup', function(req, res) {
+	var username = req.body.username;
+	var password = req.body.password;
+	var email = req.body.email;
+
+	var newuser = new User();
+	newuser.username = username;
+	newuser.password = password;
+	newuser.email = email;
+	newuser.save(function(err, saveUser) {
+		if (err) {
+			console.log(err);
+			return res.status(500).send();
+		}
+		console.log('New user added!');
+		return res.status(200).send();
 	});
 });
 

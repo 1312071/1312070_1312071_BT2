@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../lib/users');
+var User = require('../lib/users')
+ ,	Friend = require('../lib/friends');
 
 
 
@@ -63,6 +64,7 @@ router.post('/signup', function(req, res) {
 		return res.status(200).send();
 	});
 });
+<<<<<<< HEAD
 
 router.get('/messages', function(req, res) {
 	if (req.session.isLoggedIn == false) {
@@ -88,5 +90,33 @@ router.get('/messages', function(req, res) {
 	}
 });
 
+=======
+router.get('/dsuser', function(req, res)
+	{
+		console.log('Lay ds user');
+		Friend.find({}, function (err, friends){
+			User.find({},function(err, users) 
+			{
+		  		if (err) throw err;
+		  		console.log(friends.length);	
+				res.render('dsuser', { users: users, friends: friends, dangnhap: dangnhap});
+			})
+		});
+		
+	});
+router.get('/newmess', function(req, res)
+	{
+		console.log('create messages');
+		User.find({},function(err, users) 
+			{
+		  		if (err) throw err;
+		  			
+				res.render('sendMail', {users: users, dangnhap: dangnhap})
+			})
+		
+		
+		
+	});
+>>>>>>> ms6
 
 module.exports = router;

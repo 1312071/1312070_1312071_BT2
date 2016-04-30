@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dsuser</title>
+		<% include 'layouts/layout_index' %>
+		<meta charset = 'utf-8'/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	</head>
+	<html>
+    <body>
+    	<div class= "container">
+    		<div class = "row" >
+    			<div class="col-lg-6">
+    			<form role= "form" name= "" action= "" method="">
+    				<div class = "form-group">
+    					<label for="InputName">Select a friend </label>
+						<select id = "listFriend" class="form-control">
+							<% for user in @users : %>
+								<% if user.email != @dangnhap.email : %>
+
+									<option>
+										<%= user.email %>
+									</option>
+								<% end %>
+							<% end %>
+
+						</select>
+					</div>
+					<div class="form-group">
+	                    <label for="InputMessage">Enter Message</label>
+	                    
+	                    <textarea id="InputMessage" class="form-control" rows="5"></textarea>
+	                    
+                	</div>
+                	<div class="form-group">
+    					<div class="col-sm-offset-2 col-sm-10">
+      						<button type="submit" class="btn btn-default">Send</button>
+   					 	</div>
+  					</div>
+                </div>
+				</form>
+			</div>
+		</div>
+    </body>
+     
+</html>

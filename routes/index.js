@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../lib/users');
+var User = require('../lib/users')
+ ,	Friend = require('../lib/friends');
 
 
 
@@ -63,6 +64,18 @@ router.post('/signup', function(req, res) {
 		return res.status(200).send();
 	});
 });
-
+router.get('/dsuser', function(req, res)
+	{
+		console.log('Lay ds user');
+		Friend.find({}, function (err, friends){
+			User.find({},function(err, users) 
+			{
+		  		if (err) throw err;
+		  		console.log(friends.length);	
+				res.render('dsuser', { users: users, friends: friends, dangnhap: dangnhap});
+			})
+		});
+		
+	});
 
 module.exports = router;

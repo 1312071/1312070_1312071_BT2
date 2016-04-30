@@ -77,5 +77,18 @@ router.get('/dsuser', function(req, res)
 		});
 		
 	});
+router.get('/newmess', function(req, res)
+	{
+		console.log('create messages');
+		User.find({},function(err, users) 
+			{
+		  		if (err) throw err;
+		  			
+				res.render('sendMail', {users: users, dangnhap: dangnhap})
+			})
+		
+		
+		
+	});
 
 module.exports = router;

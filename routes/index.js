@@ -64,6 +64,33 @@ router.post('/signup', function(req, res) {
 		return res.status(200).send();
 	});
 });
+<<<<<<< HEAD
+
+router.get('/messages', function(req, res) {
+	if (req.session.isLoggedIn == false) {
+			return res.send(404, "NOT FOUND...");
+		}
+	if (req.session.turn == 1){
+		req.session.turn = 2;
+		res.render('messages', {title : Message});
+	}
+	else {
+		var select = req.query.select;
+		Message.find({to: req.session.user}).populate('from').exec(function(err, foundData) {
+			if (err) {
+				console.log(err);
+				return res.send(500, "OPP!!! ERROR +.=");
+			}
+
+			var messagesObject = [];
+			messagesObject = foundData;
+			res.send(messagesObject);
+		});
+		
+	}
+});
+
+=======
 router.get('/dsuser', function(req, res)
 	{
 		console.log('Lay ds user');
@@ -90,5 +117,6 @@ router.get('/newmess', function(req, res)
 		
 		
 	});
+>>>>>>> ms6
 
 module.exports = router;

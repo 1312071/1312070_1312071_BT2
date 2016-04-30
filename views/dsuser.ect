@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dsuser</title>
+		<meta charset = 'utf-8'/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	</head>
+	<html>
+    <body>
+    	<div class= "container">
+    	<form name= "tb" action= "/dsuser" method="post">
+			<table class = "table table-inverse">
+				<tr>
+					<th>Email</th>
+					<th>Add Friend</th>
+				</tr>
+	  			<% for user in @users : %>
+	    			<tr>
+	    				
+	    				<% if user.email != @dangnhap: %>
+	    				<td>
+	    					<%= user.email %>
+	    				</td>
+	    				<% end %>
+	    				<% if user.email != @dangnhap: %>
+	    				<td>
+	    					<% for friend in @friends : %>
+	    						<% if friend.email != user.email : %>
+	    							<input type="submit" value="Add ++">
+	    						<% else : %>
+	    							friend
+	    						<% end %>
+	    					<% end %>
+	    				</td>
+	    				<% end %>
+	    			</tr>
+				<% end %>
+			</table>
+		</form>
+		</div>
+    </body>
+     
+</html>

@@ -10,25 +10,41 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-  	<div class="container">
-      <form name = "newmess" action="newmess" method="get" accept-charset="utf-8">
-        <input type="submit" class="btn btn-primary" value = "New Message"/>
-      </form>
-      <form class="form-inline" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
-  		  <input type="submit" class="btn btn-success" value= "My Friends"/>
+    <div class="container">
+     <form class="form" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
+      <input type="submit" class="btn btn-success" value= "My Friends"/>
       
-  		<button type="button" class="btn btn-info">Old Messages</button>
-  		<br><br><br>
-      </form>
+      <button type="button" class="btn btn-primary" onclick= "newmess()" >New Message</button>  
+      
+      <button type="button" class="btn btn-info">Old Messages</button>
+      <br><br><br>
+     
+     </form>
    
-		<div class="list-group">
-		  <a href="#" class="list-group-item list-group-item-success">Message 1</a>
-		  <a href="#" class="list-group-item list-group-item-info">Message 2</a>
-		  <a href="#" class="list-group-item list-group-item-warning">Message 3</a>
-		  <a href="#" class="list-group-item list-group-item-danger">Message 4</a>
-		</div>
-	</div>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-success">Message 1</a>
+      <a href="#" class="list-group-item list-group-item-info">Message 2</a>
+      <a href="#" class="list-group-item list-group-item-warning">Message 3</a>
+      <a href="#" class="list-group-item list-group-item-danger">Message 4</a>
+    </div>
+  </div>
+    <script language="javascript">
+    function newmess()
+    {
+      $.ajax({
+        url : "http://localhost:3000/newmess", 
+            type : "get",
+            dateType:"jsonp",
+            success : function (){
+                window.location.assign("http://localhost:3000/newmess")
+            },
+            error : function(){
+              window.location.assign("http://localhost:3000/messages")
+            }
+      });
+    }
 
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>

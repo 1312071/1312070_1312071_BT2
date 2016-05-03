@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../lib/users')
  ,	Friend = require('../lib/friends');
-
+ var Message = require('../lib/messages');
+var ObjectId = require('mongodb');
 
 
 var dangnhap;
@@ -34,7 +35,9 @@ router.post('/', function(req, res) {
 		console.log('user login');
 		req.session.isLoggedIn = true;
 		req.session.user= email;
-		dangnhap = email;
+		req.session.turn = 1;
+		req.session.us = user;
+		//dangnhap = email;
 		console.log('created user: %s', email);
 		return res.send(user);
 	});
@@ -69,7 +72,7 @@ router.get('/messages', function(req, res) {
 	}
 	else {
 		var select = req.query.select;
-		Message.find({to: req.session.user}).populate('from').exec(function(err, foundData) {
+		Message.find({to: req.session.us._id}).populate('from').exec(function(err, foundData) {
 			if (err) {
 				console.log(err);
 				return res.send(500, "OPP!!! ERROR +.=");
@@ -77,6 +80,7 @@ router.get('/messages', function(req, res) {
 
 			var messagesObject = [];
 			messagesObject = foundData;
+			console.log(messagesObject);
 			res.send(messagesObject);
 		});
 		

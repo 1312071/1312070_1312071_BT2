@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <title><%- @title %></title>
+   <title>MY MESSAGES</title>
    <% include 'layouts/layout_messages' %>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  </head>
-  <body>
-<<<<<<< HEAD
-  	<div class="container">
-      <form class="form" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
-      <input type="submit" class="btn btn-success" value= "My Friends"/>
-      
-      <button type="button" class="btn btn-primary" onclick= "newmess()" >Create Message</button>  
-      
-      <button type="button" class="btn btn-info">Send Messages</button>
-     </form>
-     <h1>Please check your messages.</h1>
-      <div id="result" class="col-md-8">
-      </div>
-
-		
-	</div>
-  <script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <script language="javascript">
+    function LoadMessages(){
      $.ajax({
        url : "http://localhost:3000/messages",
        type : "get",
@@ -71,27 +57,7 @@
        }
      });
      }
-   </script>
-=======
-    <div class="container">
-     <form class="form" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
-      <input type="submit" class="btn btn-success" value= "My Friends"/>
-      
-      <button type="button" class="btn btn-primary" onclick= "newmess()" >New Message</button>  
-      
-      <button type="button" class="btn btn-info">Old Messages</button>
-      <br><br><br>
-     
-     </form>
-   
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-success">Message 1</a>
-      <a href="#" class="list-group-item list-group-item-info">Message 2</a>
-      <a href="#" class="list-group-item list-group-item-warning">Message 3</a>
-      <a href="#" class="list-group-item list-group-item-danger">Message 4</a>
-    </div>
-  </div>
-    <script language="javascript">
+
     function newmess()
     {
       $.ajax({
@@ -106,10 +72,27 @@
             }
       });
     }
->>>>>>> ms6
 
     </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+  	<div class="container">
+      <form class="form" name = "dsuser" action="dsuser" method="get" accept-charset="utf-8">
+      <input type="submit" class="btn btn-success" value= "My Friends"/>
+      
+      <button type="button" class="btn btn-primary" onclick= "newmess()" >Create Message</button>  
+      
+      <button type="button" class="btn btn-info">Send Messages</button>
+     </form>
+     <h1>Please check your messages.</h1>
+      <div id="result" class="col-md-8">
+      </div>
+    <script>
+      LoadMessages()
+    </script>
+		
+	</div>
+
   </body>
 </html>

@@ -14,12 +14,6 @@ router.get('/signup', function(req, res) {
 	res.render('sign_up', { title: 'SIGN UP' });
 });
 
-router.get('/messages', function(req, res) {
-	res.render('messages', { title: 'MY MESSAGES' });
-});
-
-
-
 router.post('/', function(req, res) {
 	var email = req.body.email;
 	var password = req.body.password;
@@ -64,7 +58,6 @@ router.post('/signup', function(req, res) {
 		return res.status(200).send();
 	});
 });
-<<<<<<< HEAD
 
 router.get('/messages', function(req, res) {
 	if (req.session.isLoggedIn == false) {
@@ -90,7 +83,6 @@ router.get('/messages', function(req, res) {
 	}
 });
 
-=======
 router.get('/dsuser', function(req, res)
 	{
 		console.log('Lay ds user');
@@ -104,6 +96,7 @@ router.get('/dsuser', function(req, res)
 		});
 		
 	});
+
 router.get('/newmess', function(req, res)
 	{
 		console.log('create messages');
@@ -117,6 +110,5 @@ router.get('/newmess', function(req, res)
 		
 		
 	});
->>>>>>> ms6
 
 module.exports = router;

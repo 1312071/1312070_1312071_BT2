@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
 	next(err);
 });
 
-mongoose.connect('mongodb://localhost/test', function(){
+mongoose.connect('mongodb://system:123456@ds013232.mlab.com:13232/bt2', function(){
 	console.log('Connected!');
 });
 

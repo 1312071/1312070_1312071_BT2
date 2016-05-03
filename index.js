@@ -36,7 +36,7 @@ app.use('/users', users);
 app.set('view engine', 'ect');
 app.engine('ect', ectRenderer.render);
 app.set(express.static(__dirname + '/views'));
-var port = Number(process.env.PORT || 3000)
+var port = Number(process.env.PORT || 3000);
 
 app.use(function(req, res, next) {
 	var err = new Error('Not found!');

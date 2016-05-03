@@ -36,7 +36,6 @@ app.use('/users', users);
 app.set('view engine', 'ect');
 app.engine('ect', ectRenderer.render);
 app.set(express.static(__dirname + '/views'));
-var port = Number(process.env.PORT || 3000);
 
 app.use(function(req, res, next) {
 	var err = new Error('Not found!');
@@ -48,6 +47,6 @@ mongoose.connect('mongodb://system:123456@ds013232.mlab.com:13232/bt2', function
 	console.log('Connected!');
 });
 
-app.listen(port, function(){
+app.listen(3000, function(){
 	console.log('Now listening on https://localhost:3000');
 });

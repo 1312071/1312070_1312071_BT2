@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +22,9 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7"
+  },
+  "homepage": "https://arcane-ocean-28065.herokuapp.com/",
+  "engines": {
+    "node": "4.4.2"
   }
 }

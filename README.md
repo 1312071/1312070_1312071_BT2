@@ -44,7 +44,7 @@ Các chuẩn đầu ra cần thực hiện:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
+![https://github.com/1312071/1312070_1312071_BT2/blob/master/demo.gif](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

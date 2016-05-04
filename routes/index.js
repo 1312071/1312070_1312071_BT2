@@ -115,7 +115,7 @@ router.get('/newmess', function(req, res)
 		
 	});
 
-app.get('/logout', function (req, res) {
+router.get('/logout', function (req, res) {
 		console.log('Dang dang xuat');
 		console.log('isLoggedIn: %s', req.session.isLoggedIn);
 		if (req.session.isLoggedIn)

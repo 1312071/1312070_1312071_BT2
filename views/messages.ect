@@ -13,7 +13,7 @@
    <script language="javascript">
     function LoadMessages(){
      $.ajax({
-       url : "http://localhost:3000/messages",
+       url : "/messages",
        type : "get",
        success : function (data){
          var ms = data;
@@ -61,7 +61,7 @@
     function newmess()
     {
       $.ajax({
-        url : "http://localhost:3000/newmess", 
+        url : "/newmess", 
             type : "get",
             dateType:"jsonp",
             success : function (){

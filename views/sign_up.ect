@@ -54,7 +54,7 @@
 	        var password = document.getElementById('inputPassword3').value;
 	        var username = document.getElementById('inputName3').value;
 	        $.ajax({
-	          url : "http://localhost:3000/signup", 
+	          url : "/signup", 
 	          type : "post",
 	          dateType:"jsonp", 
 	          data : { 
@@ -64,11 +64,11 @@
 	          },
 	          success : function (data){
 	              alert('Dang ky thanh cong!!!');
-	              window.location.assign("http://localhost:3000/")
+	              window.location.assign("/")
 	          },
 	          error : function(){
 	            alert('OPP...Da xay ra loi...Hay thu lai...');
-	            window.location.assign("http://localhost:3000/signup")
+	            window.location.assign("/signup")
 	          }
 	        }); 
    		}

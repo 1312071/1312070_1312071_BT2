@@ -58,11 +58,11 @@
           success : function (data){
               alert('Dang nhap thanh cong!!!');
               alert('WELCOME: ' + data.username);
-              window.location.assign("http://localhost:3000/messages")
+              window.location.assign("/messages")
           },
           error : function(){
             alert('Dang nhap khong thanh cong :(');
-            window.location.assign("http://localhost:3000/")
+            window.location.assign("/")
           }
         });
       }

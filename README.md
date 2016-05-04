@@ -4,7 +4,7 @@
 
 Danh sách sinh viên: **1312070-Nguyễn Phạm Hoàng Diễm 1312071-Nguyễn Thị Diệu**
 
-URL: **Insert your Heroku URL here**
+URL: **https://arcane-ocean-28065.herokuapp.com/**
 
 ## Chức năng
 
@@ -38,7 +38,7 @@ Danh sách chức năng **phụ** đã làm nhưng không được liệt kê �
 Các chuẩn đầu ra cần thực hiện:
 * [ ] Git với Centralize Workflow
 * [ ] Git theo Feature Branch Workflow
-* [ ] Git theo Feature Branch Workflow có Pull Request
+* [X] Git theo Feature Branch Workflow có Pull Request
 * [ ] Git theo Gitflow Workflow
 ## Video Walkthrough
 

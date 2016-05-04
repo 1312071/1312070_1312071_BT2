@@ -73,6 +73,22 @@
       });
     }
 
+    function logout()
+    {
+      $ajax({
+        url : "/logout",
+        type : "get",
+        success : function (){
+          alert("Ban da dang xuat");
+          window.location.assign("/")
+        },
+        error : function() {
+          alert("OPP...Da xay ra loi...Hay thu lai...");
+          window.location.assign("/messages")
+        }
+      });
+    }
+
     </script>
   </head>
   <body>
@@ -83,7 +99,7 @@
       
       <button type="button" class="btn btn-primary" onclick= "newmess()" >Create Message</button>  
       
-      <button type="button" class="btn btn-info">Send Messages</button>
+      <button type="button" class="btn btn-info">Sent Messages</button>
       <div id="logout">
         <button type="button" class="btn btn-primary" onclick= "logout()" >Logout</button> 
       </div>
